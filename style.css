@@ -1,0 +1,95 @@
+body{
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  /* display: grid; */
+}
+
+.intro{
+  font-family: 'PPRader-Regular';
+  font-size: 60pt;
+  width: 100vw;
+  height: 50vh  ;
+  position: absolute;
+  display: grid;
+  color: #EDEDED;
+  align-content: center;
+  justify-self: center;
+  text-align: center;
+  align-self: center;
+  margin-top: 150px;
+}
+
+.name{
+  font-size: 150pt;
+  opacity: 0;
+  animation: fadeIn ease 3s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+}
+
+.buttons{
+  width: 585px;
+  height: 70px;
+  justify-self: center;
+  align-content: center;
+  text-align: centre;
+  font-size: 25pt;
+  color: #000;
+  opacity: 0;
+  animation: fadeIn ease 7s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+}
+
+.projects{
+  background: #EDEDED;
+  border-radius: 50px;
+  width: 279px;
+  height: 70px;
+  display: inline-block;
+  justify-self: center;
+  align-items: center;
+  text-align: center;
+  /* display:grid */
+  /* margin-right: 10px; */
+}
+
+.hello{
+  font-size: 40pt;
+  transform: translateY(50px);
+  opacity: 0;
+  animation: fadeIn ease 3s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+}
+
+.resume {
+  background: #EDEDED;
+  border-radius: 50px;
+  width: 279px;
+  height: 70px;
+  display: inline-block;
+  justify-self: center;
+  align-items: center;
+  text-align: center;
+  /* display:grid */
+  /* margin-left: 10px; */
+}
+
+.text{
+  width:279px;
+  height: 70px;
+  justify-self: center;
+  align-items: center;
+  text-align: center;
+  display:grid
+}
+
+
+
+
+@keyframes fadeIn {
+	0% { opacity: 0;}
+	100% { opacity: 1;}
+}

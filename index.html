@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Dania Ezz</title>
+    <script src="p5.min.js"></script>
+    <script src='p5-wrapper.js'></script>
+    <link rel="font" href="PPRader-Regular">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="intro">
+      <div class="hello">
+        Hello! I'm
+      </div>  <div class="name">
+        DANIA EZZ
+      </div>
+
+      <div class="buttons">
+        <div class="projects"><div class="text">PROJECTS</div></div>
+        <div class="resume"><div class="text">RESUME</div></div>
+      </div>
+
+
+    </div>
+    <div></div>
+    <script src="https://unpkg.com/hydra-synth"></script>
+    <script>
+      window.onload = function() {
+        const hydra = new Hydra({
+          detectAudio: false,
+          enableStreamCapture: false,
+          width: window.innerWidth,
+          height: window.innerHeight,
+        });
+
+       p5 = new P5()
+        shape(2, 0.001, ()=>p5.mouseX/p5.width/2+0.01).modulateScrollY(noise(()=> 1*4,0.2).scale(3*0.8,1,5)).blend(o0, 0.3).mult(osc(10, 0.1, 1).color(3.5, 3.0, 3.0)).blend(o0).blend(o0, 0.7).out(o0)
+        // osc(200,.01,1).rotate(1).layer(osc(30,0,1).luma(0.2,.2).color(0,0,0,1)).layer(osc(30,0,1).luma(0.5,0.1)).modulate(noise(3,.1)).out();
+
+      }
+    </script>
+
+
+
+  </body>
+</html>
