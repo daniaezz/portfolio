@@ -2,9 +2,136 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Dania Ezz | Projects</title>
+    <title>Projects | Dania Ezz</title>
+    <script src="p5.min.js" defer></script>
+    <script src='p5-wrapper.js' defer></script>
+    <script src="jquery_3.6.0.js" defer></script>
+    <!-- <script src="script.js" defer></script> -->
+    <link rel="font" href="PPRader-Regular.otf">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
   </head>
   <body>
-    
+
+        <!-- <nav>
+          <ul>
+            <a href=""><li>Dania Ezz</li></a>
+            <a href=""><li>About Me</li></a>
+            <a href=""><li>Projects</li></a>
+            <a href=""><li>Resume</li></a>
+            <a href=""><li>Contact Me</li></a>
+          </ul>
+        </nav> -->
+
+    <!-- <div class="navBar">
+      <div class="navItems">
+        <div class="navName">Dania Ezz</div>
+        <div class="navAbout">About</div>
+        <div class="navProjects">Projects</div>
+        <div class="navResume">Resume</div>
+        <div class="navContact">Contact</div>
+      </div>
+    </div> -->
+    <div class="headline">
+      <div class="name">
+        PROJECTS
+      </div>
+    </div>
+
+    <div class="allProjects">
+      <div class="container">
+        <div class="actualProject"><img src="./projects/comfort.svg" alt="image of a black background with a white circle that has a small jagged edge consisting of three lines, red blue and green with the text comfort zone written in the center of the circle in the same colours"></div>
+        <div class="actualProject"><img src="./projects/gptrue.svg" alt=""></div>
+        <div class="actualProject"><img src="./projects/playground.svg" alt=""></div>
+      </div>
+      <div class="container">
+        <div class="actualProject"><img src="./projects/baba.svg" alt=""></div>
+        <div class="actualProject"><img src="./projects/cubes.svg" alt=""></div>
+        <div class="actualProject"><img src="./projects/fearBot.svg" alt=""></div>
+      </div>
+      <div class="container">
+        <div class="actualProject"><img src="./projects/composition.svg" alt=""></div>
+        <div class="actualProject">communication plateau</div>
+        <div class="actualProject">Lovure Thing, shiken boi</div>
+      </div>
+      <div class="container">
+        <div class="actualProject">Baqalas</div>
+        <div class="actualProject">Crochet</div>
+        <div class="actualProject">3D modeling</div>
+      </div>
+    </div>
+
+
+    <div class="hydra">
+    <script src="https://unpkg.com/hydra-synth"></script>
+    <script>
+      window.onload = function() {
+        const hydra = new Hydra({
+          detectAudio: false,
+          enableStreamCapture: false,
+          width: window.innerWidth,
+          height: window.innerHeight,
+        });
+
+       p5 = new P5()
+        // shape(2, 0.001, ()=>p5.mouseX/p5.width/2+0.01).modulateScrollY(noise(()=> 1*4,0.2).scale(3*0.8,1,5)).blend(o0, 0.3).mult(osc(10, 0.1, 1).color(3.5, 3.0, 3.0)).blend(o0).blend(o0, 0.7).out(o0)
+        // osc(200,.01,1).rotate(1).layer(osc(30,0,1).luma(0.2,.2).color(0,0,0,1)).layer(osc(30,0,1).luma(0.5,0.1)).modulate(noise(3,.1)).out();
+        var projectsButton = document.getElementById('projects');
+        var resumeButton = document.getElementById('resume');
+
+        // projectsButton.addEventListener("mouseover", ()=>{
+          s0.init({src: p5.canvas})
+          p5.hide()
+          p5.draw = ()=>{
+            p5.background(0, 0, 0);
+            p5.fill(255,255,255,100);
+            p5.textSize(120);
+            text = "projects"
+            p5.text(text,p5.width/2,p5.height/2);
+            // p5.rect(0, p5.height/2 - 5, p5.width, 5 );
+          }
+
+          var zoom = 0;
+
+          shape(2, 0, 0.05).mult(osc(10,0.1,1).color(3,3.5,3)).modulateRotate(noise(()=>0.5+zoom, 0.5)).blend(o1).blend(o1).blend(o1).out(o1)
+          render(o1)
+
+          var lastScrollTop = 0;
+          $(window).scroll(function(event){
+            var st = $(this).scrollTop();
+            if (st > lastScrollTop){
+              // downscroll code
+              // console.log("down");
+              zoom+=0.04;
+            } else if (zoom>0){
+              // upscroll code
+              // console.log("up");
+              zoom-=0.04;
+            }
+            lastScrollTop = st;
+          });
+
+          // document.addEventListener()
+      //   projectsButton.addEventListener("mouseout", ()=>{
+      //     render(o0)
+      //   });
+      //
+      //   resumeButton.addEventListener("mouseover", ()=>{
+      //     s0.init({src: p5.canvas})
+      //     p5.hide()
+      //     p5.draw = ()=>{
+      //       p5.background(0, 0, 0);
+      //       p5.fill(255,255,255,100);
+      //       p5.textSize(150);
+      //       text = "resume"
+      //       p5.text(text,width/2,height/2);
+      //     }
+      //     src(o0).add(src(s0).repeat(5,5).modulateScrollY(noise(()=> 2,0.1))).out(o2)
+      //     render(o2)
+      // });
+    }
+    </script>
+</div>
+
   </body>
 </html>

@@ -3,22 +3,39 @@
   <head>
     <meta charset="utf-8">
     <title>Dania Ezz</title>
-    <script src="p5.min.js"></script>
-    <script src='p5-wrapper.js'></script>
-    <link rel="font" href="PPRader-Regular">
+    <script src="p5.min.js" defer></script>
+    <script src='p5-wrapper.js' defer></script>
+    <script src="jquery_3.6.0.js" defer></script>
+    <script src="script.js" defer></script>
+    <link rel="font" href="PPRader-Regular.otf">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
   </head>
   <body>
+    <!-- <div class="navBar">
+      <div class="navItems">
+        <div class="navName">Dania Ezz</div>
+        <div class="navAbout">About</div>
+        <div class="navProjects">Projects</div>
+        <div class="navResume">Resume</div>
+        <div class="navContact">Contact</div>
+      </div>
+    </div> -->
+
+
     <div class="intro">
       <div class="hello">
         Hello! I'm
       </div>  <div class="name">
         DANIA EZZ
       </div>
+      <div class="create">
+        I create stuff
+      </div>
 
       <div class="buttons">
-        <div class="projects"><div class="text">PROJECTS</div></div>
-        <div class="resume"><div class="text">RESUME</div></div>
+      <a href="projects.html">  <div class="projects" id="projects"><div class="text">PROJECTS</div></div> </a>
+        <div class="resume" id="resume"><div class="text">RESUME</div></div>
       </div>
 
 
@@ -32,16 +49,58 @@
           enableStreamCapture: false,
           width: window.innerWidth,
           height: window.innerHeight,
+          // position: absolute,
         });
 
        p5 = new P5()
         shape(2, 0.001, ()=>p5.mouseX/p5.width/2+0.01).modulateScrollY(noise(()=> 1*4,0.2).scale(3*0.8,1,5)).blend(o0, 0.3).mult(osc(10, 0.1, 1).color(3.5, 3.0, 3.0)).blend(o0).blend(o0, 0.7).out(o0)
         // osc(200,.01,1).rotate(1).layer(osc(30,0,1).luma(0.2,.2).color(0,0,0,1)).layer(osc(30,0,1).luma(0.5,0.1)).modulate(noise(3,.1)).out();
+        var projectsButton = document.getElementById('projects');
+        var resumeButton = document.getElementById('resume');
+
+        // projectsButton.addEventListener("mouseover", ()=>{
+        //   s0.init({src: p5.canvas})
+        //   p5.hide()
+        //   p5.draw = ()=>{
+        //     p5.background(0, 0, 0);
+        //     p5.fill(255,255,255,100);
+        //     p5.textSize(150);
+        //     text = "projects"
+        //     p5.text(text,width/2,height/2);
+        //   }
+        //   src(o0).add(src(s0).repeat(5,5).modulateRotate(noise(2))).out(o1)
+        //   render(o1)
+        // });
+        //
+        // projectsButton.addEventListener("mouseout", ()=>{
+        //   render(o0)
+        // });
+        //
+        // resumeButton.addEventListener("mouseover", ()=>{
+        //   s0.init({src: p5.canvas})
+        //   p5.hide()
+        //   p5.draw = ()=>{
+        //     p5.background(0, 0, 0);
+        //     p5.fill(255,255,255,100);
+        //     p5.textSize(150);
+        //     text = "resume"
+        //     p5.text(text,width/2,height/2);
+        //   }
+        //   src(o0).add(src(s0).repeat(6,5).modulateScrollY(noise(()=> 2,0.1))).out(o2)
+        //   render(o2)
+        // });
+        //
+        // resumeButton.addEventListener("mouseout", ()=>{
+        //   render(o0)
+        // });
+
 
       }
     </script>
 
+    <div class="aboutMe">
 
+    </div>
 
   </body>
 </html>
