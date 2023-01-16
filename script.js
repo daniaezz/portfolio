@@ -82,9 +82,9 @@ class TextScramble {
 
 const phrases = [
   'I create art',
-  'I design 3D models',
+  'I make 3D models',
   'I build robots',
-  'I make music',
+  'I code music',
   'I create generative art',
   'I enjoy crochet'
 ]

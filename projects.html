@@ -40,25 +40,25 @@
 
     <div class="allProjects">
       <div class="container">
-        <div class="actualProject"><img src="./projects/comfort.svg" alt="image of a black background with a white circle that has a small jagged edge consisting of three lines, red blue and green with the text comfort zone written in the center of the circle in the same colours"></div>
-        <div class="actualProject"><img src="./projects/gptrue.svg" alt=""></div>
-        <div class="actualProject"><img src="./projects/playground.svg" alt=""></div>
+        <div class="actualProject" id='comfort'><img src="./projects/comfort.svg" alt="image of a black background with a white circle that has a small jagged edge consisting of three lines, red blue and green with the text comfort zone written in the center of the circle in the same colours"><div class='over'></div></div>
+        <div class="actualProject" id='gptrue'><img src="./projects/gptrue.svg" alt=""><div class='over'></div></div>
+        <div class="actualProject" id='playground'><img src="./projects/playground.svg" alt=""><div class='over'></div></div>
       </div>
       <div class="container">
-        <div class="actualProject"><img src="./projects/baba.svg" alt=""></div>
-        <div class="actualProject"><img src="./projects/cubes.svg" alt=""></div>
-        <div class="actualProject"><img src="./projects/fearBot.svg" alt=""></div>
+        <div class="actualProject" id='baba'><img src="./projects/baba.svg" alt=""><div class='over'></div></div>
+        <div class="actualProject" id='cubes'><img src="./projects/cubes.svg" alt=""><div class='over'></div></div>
+        <div class="actualProject" id='fearBot'><img src="./projects/fearBot.svg" alt=""><div class='over'></div></div>
       </div>
       <div class="container">
-        <div class="actualProject"><img src="./projects/composition.svg" alt=""></div>
-        <div class="actualProject">communication plateau</div>
-        <div class="actualProject">Lovure Thing, shiken boi</div>
+        <div class="actualProject" id='liveCoding'><img src="./projects/liveCoding.svg" alt=""><div class='over'></div></div>
+        <div class="actualProject" id='shiken'><img src="./projects/shiken.svg" alt=""><div class='over'></div></div>
+        <div class="actualProject" id=''></div>
       </div>
-      <div class="container">
+      <!-- <div class="container">
         <div class="actualProject">Baqalas</div>
         <div class="actualProject">Crochet</div>
         <div class="actualProject">3D modeling</div>
-      </div>
+      </div> -->
     </div>
 
 
@@ -79,27 +79,61 @@
         var projectsButton = document.getElementById('projects');
         var resumeButton = document.getElementById('resume');
 
+
+        s0.init({src: p5.canvas})
+        p5.hide()
+        p5.draw = ()=>{
+          p5.background(0, 0, 0);
+          p5.fill(255);
+          // p5.stroke
+          p5.rect(0, 3.6*p5.height/10, p5.width, 20);
+        }
+        src(s0).modulate(noise(4)).mult(osc(10, 0.1, 1).color(3.5, 3.0, 3.0)).blend(o1).blend(o1).blend(o1).blend(o1).out(o1)
+        render(o1)
+
+        // document.addEventListener("mousemove", ()=>{
+        //   if(p5.mouseY> 3.6*p5.height/10 -10 && 3.6*p5.height/10 +10 >p5.mouseY){
+        //     src(s0).modulate(noise(5)).mult(osc(10, 0.1, 1).color(3.5, 3.0, 3.0)).blend(o1).blend(o1).blend(o1).blend(o1).out(o1)
+        //     render(o1)
+        //     console.log("top");
+        //   } else{
+        //     src(s0).mult(osc(10, 0.1, 1).color(3.5, 3.0, 3.0)).modulate(noise(1)).blend(o1).blend(o1).blend(o1).blend(o1).out(o1)
+        //     render(o1)
+        //     console.log("bottom");
+        //   }
+        // });
+
+
+
+        // console.log(3.6*p5.height/10 +5);
+        // console.log(p5.mouseY);
+
         // projectsButton.addEventListener("mouseover", ()=>{
-          s0.init({src: p5.canvas})
-          p5.hide()
-          p5.draw = ()=>{
-            p5.background(0, 0, 0);
-            p5.fill(255,255,255,100);
-            p5.textSize(120);
-            text = "projects"
-            p5.text(text,p5.width/2,p5.height/2);
-            // p5.rect(0, p5.height/2 - 5, p5.width, 5 );
-          }
+          // s0.init({src: p5.canvas})
+          // p5.hide()
+          // p5.draw = ()=>{
+          //   p5.background(0, 0, 0);
+          //   p5.fill(255,255,255,100);
+          //   p5.textSize(120);
+          //   text = "projects"
+          //   p5.text(text,p5.width/2,p5.height/2);
+          //   // p5.rect(0, p5.height/2 - 5, p5.width, 5 );
+          // }
 
           var zoom = 0;
 
-          shape(2, 0, 0.05).mult(osc(10,0.1,1).color(3,3.5,3)).modulateRotate(noise(()=>0.5+zoom, 0.5)).blend(o1).blend(o1).blend(o1).out(o1)
-          render(o1)
+          // src(s0).add(shape(2, 0, 0.05)).repeat(3,3).modulateRotate(noise(()=>1+zoom, 0.5)).out()
+
+          // shape(2, 0.05, ()=>zoom/10+0.01).modulateScrollY(noise(()=> 1*4,0.2).scale(3*0.8,1,5)).kaleid(5).blend(o0, 0.3).mult(osc(10, 0.1, 1).luma(0.1).color(3.5, 3.0, 3.0)).blend(o0).blend(o0, 0.7).out(o0)
+
+///
+          // shape(2, 0.01, 0.05).mult(osc(10,0.1,1).color(3,3.5,3)).modulateScrollY(noise(()=>0.5+zoom, 0.5)).blend(o1).blend(o1).blend(o1).out(o1)
+          // render(o1)
 
           var lastScrollTop = 0;
           $(window).scroll(function(event){
             var st = $(this).scrollTop();
-            if (st > lastScrollTop){
+            if (st > lastScrollTop && zoom<2){
               // downscroll code
               // console.log("down");
               zoom+=0.04;
@@ -129,6 +163,11 @@
       //     src(o0).add(src(s0).repeat(5,5).modulateScrollY(noise(()=> 2,0.1))).out(o2)
       //     render(o2)
       // });
+
+      $('.actualProject').addEventListener('mouseover', ()=>{
+        $('.over').style.visibility = 'visible;'
+      });
+
     }
     </script>
 </div>
